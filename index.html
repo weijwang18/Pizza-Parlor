@@ -21,25 +21,71 @@
   </head>
   <body>
     <h1>Pizza Time</h1>
-    <form id="selection">
-      <div class="radio">
+    <h4>Create Your Own Pizza</h4>
+    <form id="priceForm">
+      <!-- pizza size form -->
+      <form id="size">
+        <div class="radio">
+          <h4>Size</h4>
+          <label>
+            <input type="radio" name="size" value="small" checked />
+            Small
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="medium" checked />
+            Medium
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="large" />
+            Large
+          </label>
+        </div>
+      </form>
+      <!-- end of pizza size form -->
+      <!-- pizza meat-toppings form -->
+      <form id="meatTopping">
+        <h4>Meat Toppings</h4>
         <label>
-          <input type="radio" name="size" value="small" checked />
-          SMALL
+          Pepperoni
+          <input type="checkbox" name="pepperoni" />
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" name="size" value="medium" checked />
-          MEDIUM
+          Sausage
+          <input type="checkbox" name="sausage" />
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" name="size" value="large" checked />
-          LARGE
+          Bacon
+          <input type="checkbox" name="bacon" />
         </label>
-      </div>
+      </form>
+      <!-- end of meat topping form -->
+      <!-- pizza non-meat toppings form -->
+      <form id="nonMeatTopping">
+        <h4>Non-Meat Toppings</h4>
+        <label>
+          Onions
+          <input type="checkbox" name="onion" />
+        </label>
+        <label>
+          Mushrooms
+          <input type="checkbox" name="mushroom" />
+        </label>
+        <label>
+          Spinach
+          <input type="checkbox" name="spinach" />
+        </label>
+      </form>
+      <button type="submit" class="butn butn-primary">Submit</button>
     </form>
+    <!-- end of none-meat topping form -->
+    <!-- cost -->
+    <div class="output">
+      <h5>Your total is <span class="price"></span></h5>
+    </div>
+    <!-- cost -->
   </body>
 </html>
