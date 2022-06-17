@@ -24,7 +24,7 @@
     <h4>Create Your Own Pizza</h4>
     <form id="priceForm">
       <!-- pizza size form -->
-      <form id="size">
+      <div id="size">
         <div class="radio">
           <h4>Size</h4>
           <label>
@@ -44,42 +44,44 @@
             Large
           </label>
         </div>
-      </form>
+      </div>
       <!-- end of pizza size form -->
       <!-- pizza meat-toppings form -->
-      <form id="meatTopping">
-        <h4>Meat Toppings</h4>
+
+      <h4>Meat Toppings</h4>
+      <div id="meatTopping">
         <label>
           Pepperoni
-          <input type="checkbox" name="Pepperoni" />
+          <input type="checkbox" name="toppings" />
         </label>
         <label>
           Sausage
-          <input type="checkbox" name="Sausage" />
+          <input type="checkbox" name="toppings" />
         </label>
         <label>
           Bacon
-          <input type="checkbox" name="Bacon" />
+          <input type="checkbox" name="toppings" />
         </label>
-      </form>
+      </div>
       <!-- end of meat topping form -->
       <!-- pizza non-meat toppings form -->
-      <form id="nonMeatTopping">
-        <h4>Non-Meat Toppings</h4>
+      <h4>Non-Meat Toppings</h4>
+      <div id="nonMeatTopping">
         <label>
           Onions
-          <input type="checkbox" name="Onions" />
+          <input type="checkbox" name="toppings" />
         </label>
         <label>
           Mushrooms
-          <input type="checkbox" name="Mushrooms" />
+          <input type="checkbox" name="toppings" />
         </label>
         <label>
           Spinach
-          <input type="checkbox" name="Spinach" />
+          <input type="checkbox" name="toppings" />
         </label>
-      </form>
-      <button type="submit" class="butn butn-primary">Submit</button>
+        <p>You picked:<span class="meatSelection"></span></p>
+      </div>
+      <button id="submit" class="butn butn-primary">Submit</button>
     </form>
     <!-- end of none-meat topping form -->
     <!-- cost -->

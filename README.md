@@ -35,8 +35,8 @@ Expected Output: Pizza { size: "Medium", meatToppings: ["Bacon", "Sausage"],nonM
 Describe: Pizza.calculatePrice
 
 Test2: "It should return the price of a Pizza"
-Code:
-Expected Output:
+Code: newPizza.calculatePrice()
+Expected Output: 
 
 ## License
 
