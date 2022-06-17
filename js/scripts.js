@@ -6,7 +6,6 @@ function Pizza(size, meatToppings, nonMeatToppings) {
   this.nonMeatToppings = nonMeatToppings;
 }
 
-
 Pizza.prototype.calculatePrice = function () {
   // base cost//
   let base = 0;
@@ -25,18 +24,20 @@ Pizza.prototype.calculatePrice = function () {
   return price;
 };
 
-
 //Ui logic//
 $(document).ready(function () {
-  // // function getNonMeatToppings() {
-  // let nonMeatSelection = [];
-  // $("#nonMeatTopping:checked").each(function () {
-  //   nonMeatSelection.push($(this).val());
-  // });
-  // console.log(nonMeatSelection);
-  // // }
-  // $("#submit").click(function (event) {
-  //   event.preventDefault();
-  //   console.log($("input[type=checkbox][name=toppings]:checked").val());
-  // });
+  let newPizza = new Pizza();
+
+  $("button").click(function () {
+    let toppingSelection = [];
+    $.each($("input[name='toppings']:checked"), function () {
+      toppingSelection.push($(this).val());
+    });
+    alert("You select: " + toppingSelection.join(", "));
+  });
+
+  $("#priceForm").submit(function (event) {
+    event.preventDefault();
+    console.log($("input[type=checkbox][name=toppings]:checked").val());
+  });
 });
