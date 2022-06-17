@@ -6,8 +6,9 @@ function Pizza(size, meatToppings, nonMeatToppings) {
   this.nonMeatToppings = nonMeatToppings;
 }
 
-// meatTopping $2 each, nonMeatToppings $1 each//
+
 Pizza.prototype.calculatePrice = function () {
+  // base cost//
   let base = 0;
   if (this.size === "Small") {
     base += 4;
@@ -16,19 +17,14 @@ Pizza.prototype.calculatePrice = function () {
   } else if (this.size === "Large") {
     base += 6;
   }
+  // base cost //
+  // meatTopping $2 each, nonMeatToppings $1 each//
   let numbersofMeatToppings = Object.keys(this.meatToppings).length;
   let numbersofNonMeatToppings = Object.keys(this.nonMeatToppings).length;
   let price = numbersofMeatToppings * 2 + numbersofNonMeatToppings + base;
   return price;
 };
 
-// let toppingPrice = 0;
-// this.meatToppings.forEach();{
-//   toppingPrice +=2;
-// }
-// this.nonMeatToppings.forEach();{
-//   toppingPrice +=1;
-// }
 
 //Ui logic//
 $(document).ready(function () {

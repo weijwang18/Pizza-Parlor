@@ -26,18 +26,23 @@ Users can choose one or more individual toppings (cheese, pepperoni, artichoke, 
 
 ## Tests
 
-Describe: Pizza()
+**Describe: Pizza()**
 
 Test1: "It should return a Pizza object with three properties for meat toppings, non-meat toppings and size"
 Code: const myPizza = new Pizza("Medium", ["Bacon", "Sausage"], ["Onions", "Spinach"])
 Expected Output: Pizza { size: "Medium", meatToppings: ["Bacon", "Sausage"],nonMeatToppings: ["Onions", "Spinach"]}
 
-Describe: Pizza.prototype.calculatePrice
+**Describe: Pizza.prototype.calculatePrice**
 
-Test1: "It should return the base price of a small, medium, or large Pizza"
+**Test1: "It should return the base price of a small, medium, or large pizza"**
 Code: const myPizza = new Pizza("Medium", ["Bacon", "Sausage"], ["Onions", "Spinach"])
 myPizza.calculatePrice()
 Expected Output: 5
+
+**Test2: "It should return the total price of a pizza"**
+Code: const myPizza = new Pizza("Medium", ["Bacon", "Sausage"], ["Onions", "Spinach"])
+myPizza.calculatePrice()
+Expected Output: 11
 
 ## License
 
