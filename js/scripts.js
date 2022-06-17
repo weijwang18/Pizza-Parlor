@@ -6,7 +6,8 @@ function Pizza(size, meatToppings, nonMeatToppings) {
   this.nonMeatToppings = nonMeatToppings;
 }
 
-function basePrice() {
+// meatTopping $2 each, nonMeatToppings $1 each//
+Pizza.prototype.calculatePrice = function () {
   let base = 0;
   if (this.size === "Small") {
     base += 4;
@@ -15,13 +16,8 @@ function basePrice() {
   } else if (this.size === "Large") {
     base += 6;
   }
-  return base;
-}
-// meatTopping $2 each, nonMeatToppings $1 each//
-Pizza.prototype.calculatePrice = function () {
   let numbersofMeatToppings = Object.keys(this.meatToppings).length;
   let numbersofNonMeatToppings = Object.keys(this.nonMeatToppings).length;
-  const base = basePrice(this.size);
   let price = numbersofMeatToppings * 2 + numbersofNonMeatToppings + base;
   return price;
 };
