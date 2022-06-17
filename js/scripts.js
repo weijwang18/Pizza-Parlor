@@ -6,16 +6,34 @@ function Pizza(size, meatToppings, nonMeatToppings) {
   this.nonMeatToppings = nonMeatToppings;
 }
 
+function basePrice() {
+  let base = 0;
+  if (this.size === "Small") {
+    base += 4;
+  } else if (this.size === "Medium") {
+    base += 5;
+  } else if (this.size === "Large") {
+    base += 6;
+  }
+  return base;
+}
 // meatTopping $2 each, nonMeatToppings $1 each//
 Pizza.prototype.calculatePrice = function () {
-  let base = 5;
-  for (toppings in this.meatToppings) {
-    cost += 2;
-  }
-  for (toppings in this.nonMeatToppings) {
-    cost += 1;
-  }
+  let numbersofMeatToppings = Object.keys(this.meatToppings).length;
+  let numbersofNonMeatToppings = Object.keys(this.nonMeatToppings).length;
+  const base = basePrice(this.size);
+  let price = numbersofMeatToppings * 2 + numbersofNonMeatToppings + base;
+  return price;
 };
+
+// let toppingPrice = 0;
+// this.meatToppings.forEach();{
+//   toppingPrice +=2;
+// }
+// this.nonMeatToppings.forEach();{
+//   toppingPrice +=1;
+// }
+
 //Ui logic//
 $(document).ready(function () {
   // // function getNonMeatToppings() {
@@ -25,7 +43,6 @@ $(document).ready(function () {
   // });
   // console.log(nonMeatSelection);
   // // }
-
   // $("#submit").click(function (event) {
   //   event.preventDefault();
   //   console.log($("input[type=checkbox][name=toppings]:checked").val());

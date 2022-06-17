@@ -32,11 +32,12 @@ Test1: "It should return a Pizza object with three properties for meat toppings,
 Code: const myPizza = new Pizza("Medium", ["Bacon", "Sausage"], ["Onions", "Spinach"])
 Expected Output: Pizza { size: "Medium", meatToppings: ["Bacon", "Sausage"],nonMeatToppings: ["Onions", "Spinach"]}
 
-Describe: Pizza.calculatePrice
+Describe: Pizza.prototype.calculatePrice
 
-Test2: "It should return the price of a Pizza"
-Code: newPizza.calculatePrice()
-Expected Output: 
+Test1: "It should return the base price of a small, medium, or large Pizza"
+Code: const myPizza = new Pizza("Medium", ["Bacon", "Sausage"], ["Onions", "Spinach"])
+myPizza.calculatePrice()
+Expected Output: 5
 
 ## License
 
