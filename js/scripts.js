@@ -50,7 +50,8 @@ $(document).ready(function () {
     });
     let size = $("input:radio[name=size]:checked").val();
     pizza.addSize(size);
-    console.log(pizza);
+    let name = $("#name").val();
+    $("#recipient").text(name + "!");
     $("#price").text(pizza.calculatePrice());
   });
 });

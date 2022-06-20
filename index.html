@@ -23,6 +23,8 @@
     <h1>Pizza Time</h1>
     <h4>Create Your Own Pizza</h4>
     <form id="size">
+      <h4>Name</h4>
+      <input type="text" name="name" id="name" placeholder="Enter recipient" />
       <!-- pizza size -->
       <div id="size">
         <div class="radio">
@@ -79,12 +81,12 @@
           <input type="checkbox" name="toppings" value="Spinach" />
         </label>
       </div>
-      <button type="submit" class="butn butn-primary">Order</button>
+      <button type="submit" class="butn butn-primary">ADD TO CART</button>
     </form>
     <!-- end of none-meat topping -->
     <!-- cost -->
     <div class="output">
-      <h5>Your total is <span id="price"></span></h5>
+      <h5><span id="recipient"></span>Your total is $<span id="price"></span></h5>
     </div>
     <!-- cost -->
   </body>
