@@ -51,7 +51,13 @@ $(document).ready(function () {
     let size = $("input:radio[name=size]:checked").val();
     pizza.addSize(size);
     let name = $("#name").val();
-    $("#recipient").text(name + "!");
-    $("#price").text(pizza.calculatePrice());
+    $("#recipient").text(name + "😉");
+    $("#selection").text(
+      pizza.Toppings.meatToppings.join(",") +
+        "," +
+        pizza.Toppings.nonMeatToppings.join(",")
+    );
+    $("#price").text("$" + pizza.calculatePrice());
+    $(".output").show();
   });
 });
