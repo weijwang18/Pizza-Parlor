@@ -22,7 +22,7 @@
   <body>
     <h1>Pizza Time</h1>
     <h4>Create Your Own Pizza</h4>
-    <form id="priceForm">
+    <form id="size">
       <!-- pizza size -->
       <div id="size">
         <div class="radio">
@@ -47,20 +47,19 @@
       </div>
       <!-- end of pizza size -->
       <!-- pizza meat-toppings -->
-
       <h4>Meat Toppings</h4>
       <div id="meatTopping">
         <label>
           Pepperoni
-          <input type="checkbox" name="toppings" value="Pepperoni" />
+          <input type="checkbox" name="meattoppings" value="Pepperoni" />
         </label>
         <label>
           Sausage
-          <input type="checkbox" name="toppings" value="Sausage" />
+          <input type="checkbox" name="meattoppings" value="Sausage" />
         </label>
         <label>
           Bacon
-          <input type="checkbox" name="toppings" value="Bacon" />
+          <input type="checkbox" name="meattoppings" value="Bacon" />
         </label>
       </div>
       <!-- end of meat topping -->
@@ -80,12 +79,12 @@
           <input type="checkbox" name="toppings" value="Spinach" />
         </label>
       </div>
-      <button type="submit" class="butn butn-primary">Submit</button>
+      <button type="submit" class="butn butn-primary">Order</button>
     </form>
     <!-- end of none-meat topping -->
     <!-- cost -->
     <div class="output">
-      <h5>Your total is <span class="price"></span></h5>
+      <h5>Your total is <span id="price"></span></h5>
     </div>
     <!-- cost -->
   </body>

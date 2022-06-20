@@ -1,10 +1,18 @@
 //Business logic//
 
-function Pizza(size, meatToppings, nonMeatToppings) {
+function Pizza(size, Toppings, price) {
   this.size = size;
-  this.meatToppings = meatToppings;
-  this.nonMeatToppings = nonMeatToppings;
+  this.Toppings = Toppings;
+  this.price = price;
 }
+
+Pizza.prototype.addToppings = function () {
+  this.Toppings = { meatToppings: [], nonMeatToppings: [] };
+};
+
+Pizza.prototype.addSize = function (size) {
+  this.size = size;
+};
 
 Pizza.prototype.calculatePrice = function () {
   // base cost//
@@ -18,26 +26,31 @@ Pizza.prototype.calculatePrice = function () {
   }
   // base cost //
   // meatTopping $2 each, nonMeatToppings $1 each//
-  let numbersofMeatToppings = Object.keys(this.meatToppings).length;
-  let numbersofNonMeatToppings = Object.keys(this.nonMeatToppings).length;
+  let numbersofMeatToppings = Object.keys(this.Toppings.meatToppings).length;
+  let numbersofNonMeatToppings = Object.keys(
+    this.Toppings.nonMeatToppings
+  ).length;
   let price = numbersofMeatToppings * 2 + numbersofNonMeatToppings + base;
+  this.price = price;
   return price;
 };
 
 //Ui logic//
 $(document).ready(function () {
-  let newPizza = new Pizza();
+  let pizza = new Pizza();
 
-  $("button").click(function () {
-    let toppingSelection = [];
-    $.each($("input[name='toppings']:checked"), function () {
-      toppingSelection.push($(this).val());
-    });
-    alert("You select: " + toppingSelection.join(", "));
-  });
-
-  $("#priceForm").submit(function (event) {
+  $("button").click(function (event) {
     event.preventDefault();
-    console.log($("input[type=checkbox][name=toppings]:checked").val());
+    pizza.addToppings();
+    $.each($("input:checkbox[name=meattoppings]:checked"), function () {
+      pizza.Toppings.meatToppings.push($(this).val());
+    });
+    $.each($("input:checkbox[name=toppings]:checked"), function () {
+      pizza.Toppings.nonMeatToppings.push($(this).val());
+    });
+    let size = $("input:radio[name=size]:checked").val();
+    pizza.addSize(size);
+    console.log(pizza);
+    $("#price").text(pizza.calculatePrice());
   });
 });
